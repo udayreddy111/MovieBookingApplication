@@ -23,7 +23,6 @@ public class TheatreController {
 
     @GetMapping("/location/{location}")
     public List<Theatre> getByLocation(@PathVariable String location) {
-        System.out.println("re produce the conflict");
         return theatreService.getByLocation(location);
     }
     
@@ -39,7 +38,7 @@ public class TheatreController {
                                  @RequestParam String newName,
                                  @RequestParam Integer seats) {
     	
-    	System.out.println("Updating theatre oldname with newname");
+    	System.out.println("Updating theatre oldname with updated name");
         return theatreService.updateTheatre(oldName, newName, seats);
         
     }
