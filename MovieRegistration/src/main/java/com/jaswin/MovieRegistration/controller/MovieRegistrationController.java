@@ -36,7 +36,8 @@ public class MovieRegistrationController {
 	}
 	@PutMapping("/updatemoviedetails/{theaterid}")
 	public MovieBooking updateMovieDetailsById(@PathVariable Long theaterid,@RequestBody MovieBooking movieBooking) {
-		return movieRegistrationService.updateMovieDetails(theaterid,movieBooking);
+		System.out.println( "this is trying to update");
+        return movieRegistrationService.updateMovieDetails(theaterid,movieBooking);
 	}
 
     
