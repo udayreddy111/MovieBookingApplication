@@ -24,4 +24,22 @@ public class TheatreService {
         return theatreRepository.findByLocation(location);
     }
     
+    // DELETE - Theatre by name
+    public String deleteByName(String theatreName) {
+    	 theatreRepository.deleteByTheatreName(theatreName);
+        return "Theatre deleted successfully";
+    }
+
+    // UPDATE - Theatre name & seats
+    public Theatre updateTheatre(String oldName, String newName, Integer seats) {
+
+        Theatre theatre =  theatreRepository.findByTheatreName(oldName)
+                .orElseThrow(() -> new RuntimeException("Theatre not found"));
+
+        theatre.setTheatreName(newName);
+        theatre.setSeats(seats);
+
+        return  theatreRepository.save(theatre);
+    }
+    
 }

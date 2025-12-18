@@ -25,5 +25,20 @@ public class TheatreController {
     public List<Theatre> getByLocation(@PathVariable String location) {
         return theatreService.getByLocation(location);
     }
+    
+    // DELETE - Theatre by theatreName
+    @DeleteMapping("/{theatreName}")
+    public String deleteTheatre(@PathVariable String theatreName) {
+        return theatreService.deleteByName(theatreName);
+    }
+
+    // PUT - Update theatre
+    @PutMapping
+    public Theatre updateTheatre(@RequestParam String oldName,
+                                 @RequestParam String newName,
+                                 @RequestParam Integer seats) {
+        return theatreService.updateTheatre(oldName, newName, seats);
+    }
+
 
 }
