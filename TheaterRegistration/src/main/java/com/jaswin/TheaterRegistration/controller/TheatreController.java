@@ -38,8 +38,10 @@ public class TheatreController {
     public Theatre updateTheatre(@RequestParam String oldName,
                                  @RequestParam String newName,
                                  @RequestParam Integer seats) {
+    	
+    	System.out.println("Updating theatre name");
         return theatreService.updateTheatre(oldName, newName, seats);
+        
     }
-
 
 }
