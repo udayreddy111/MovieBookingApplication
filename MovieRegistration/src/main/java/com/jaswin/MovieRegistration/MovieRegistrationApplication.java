@@ -6,7 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MovieRegistrationApplication {
 
+
 	public static void main(String[] args) {
+
+		System.out.println("new branch craeted");
 		SpringApplication.run(MovieRegistrationApplication.class, args);
 	}
 
