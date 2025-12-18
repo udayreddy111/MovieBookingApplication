@@ -22,6 +22,8 @@ public class MovieRegistrationController {
 	private MovieRegistrationService movieRegistrationService ;
 	@PostMapping("/insert")
 	public MovieBooking insertMovieDetails(@RequestBody MovieBooking movieBooking) {
+
+		System.out.println("hi lokesh now you can understand right?");
 		return movieRegistrationService.insertMovieDetails(movieBooking);
 	}
 	@GetMapping("/getmoviedetailsbyid/{theaterid}")
