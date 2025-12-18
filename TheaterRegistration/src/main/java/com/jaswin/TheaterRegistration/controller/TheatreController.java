@@ -40,7 +40,7 @@ public class TheatreController {
                                  @RequestParam Integer seats) {
     	
         System.out.println("i am writing one more line");
-    	System.out.println("Updating theatre oldname with newname");
+    	System.out.println("Updating theatre oldname with old name ");
         return theatreService.updateTheatre(oldName, newName, seats);
         
     }
