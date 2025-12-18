@@ -1,4 +1,4 @@
-package com.jaswin.TheaterRegistration.entiry;
+package com.jaswin.TheaterRegistration.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
