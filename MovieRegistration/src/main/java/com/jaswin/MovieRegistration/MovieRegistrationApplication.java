@@ -11,6 +11,7 @@ public class MovieRegistrationApplication {
 
 		System.out.println("new branch craeted");
 		SpringApplication.run(MovieRegistrationApplication.class, args);
+		System.out.println("hi");
 	}
 
 }
