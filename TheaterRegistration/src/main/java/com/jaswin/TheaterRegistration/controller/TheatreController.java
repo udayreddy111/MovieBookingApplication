@@ -37,13 +37,7 @@ public class TheatreController {
     public Theatre updateTheatre(@RequestParam String oldName,
                                  @RequestParam String newName,
                                  @RequestParam Integer seats) {
-    	
-
-    	System.out.println("Updating theatre oldname with updated name");
-
-        System.out.println("i am writing one more line");
-
-
+   
         return theatreService.updateTheatre(oldName, newName, seats);
         
     }
