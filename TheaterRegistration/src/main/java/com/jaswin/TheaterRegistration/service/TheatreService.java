@@ -41,5 +41,5 @@ public class TheatreService {
 
         return  theatreRepository.save(theatre);
     }
-    
+   
 }
