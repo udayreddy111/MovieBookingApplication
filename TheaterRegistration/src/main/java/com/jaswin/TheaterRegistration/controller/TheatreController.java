@@ -23,6 +23,7 @@ public class TheatreController {
 
     @GetMapping("/location/{location}")
     public List<Theatre> getByLocation(@PathVariable String location) {
+        System.out.println("re produce the conflict");
         return theatreService.getByLocation(location);
     }
     
