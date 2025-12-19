@@ -1,4 +1,4 @@
-package com.jaswin.TheaterRegistration.repository;
+package com.jaswin.theatreregistration.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,7 +6,8 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.jaswin.TheaterRegistration.entity.Theatre;
+import com.jaswin.theatreregistration.entity.Theatre;
+
 
 @Repository
 public interface TheatreRepository extends JpaRepository<Theatre, Long>{
