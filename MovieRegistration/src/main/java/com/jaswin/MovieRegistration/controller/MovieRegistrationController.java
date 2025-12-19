@@ -1,42 +1,49 @@
-package com.jaswin.MovieRegistration.controller;
+package com.jaswin.movieregistration.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import com.jaswin.MovieRegistration.entity.MovieBooking;
-import com.jaswin.MovieRegistration.service.MovieRegistrationService;
+import com.jaswin.movieregistration.model.MovieBookingDTO;
+import com.jaswin.movieregistration.service.MovieRegistrationService;
 
 @RestController
-@RequestMapping("/Api/MoviesRegistration")
+@RequestMapping("/api/movies")
 public class MovieRegistrationController {
-	@Autowired
-	private MovieRegistrationService movieRegistrationService ;
-	@PostMapping("/insert")
-	public MovieBooking insertMovieDetails(@RequestBody MovieBooking movieBooking) {
 
-		return movieRegistrationService.insertMovieDetails(movieBooking);
-	}
-	@GetMapping("/getmoviedetailsbyid/{theaterid}")
-	public Optional<MovieBooking> getMovieDetailsById(@PathVariable Long theaterid) {
-		return movieRegistrationService.getMovieDetailsById(theaterid);
-	}
-	@GetMapping("/getallmoviedetails")
-	public List<MovieBooking> getAllMovieDetails() {
-		return movieRegistrationService.getAllMovieDetails();
-	}
-	@PutMapping("/updatemoviedetails/{theaterid}")
-	public MovieBooking updateMovieDetailsById(@PathVariable Long theaterid,@RequestBody MovieBooking movieBooking) {
-        return movieRegistrationService.updateMovieDetails(theaterid,movieBooking);
-	}
+    @Autowired
+    private MovieRegistrationService movieService;
 
-    
+    // CREATE
+    @PostMapping
+    public MovieBookingDTO insert(@RequestBody MovieBookingDTO dto) {
+        return movieService.insertMovie(dto);
+    }
+
+    // READ BY ID
+    @GetMapping("/{id}")
+    public MovieBookingDTO getById(@PathVariable("id") Long theaterId) {
+        return movieService.getMovieById(theaterId);
+    }
+
+    // READ ALL
+    @GetMapping
+    public List<MovieBookingDTO> getAll() {
+        return movieService.getAllMovies();
+    }
+
+    // UPDATE
+    @PutMapping("/{id}")
+    public MovieBookingDTO update(
+            @PathVariable("id") Long theaterId,
+            @RequestBody MovieBookingDTO dto) {
+        return movieService.updateMovie(theaterId, dto);
+    }
+
+    // DELETE
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") Long theaterId) {
+        return movieService.deleteMovie(theaterId);
+    }
 }

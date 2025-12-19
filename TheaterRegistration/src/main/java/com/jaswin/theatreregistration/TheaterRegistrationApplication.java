@@ -1,4 +1,4 @@
-package com.jaswin.TheaterRegistration;
+package com.jaswin.theatreregistration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

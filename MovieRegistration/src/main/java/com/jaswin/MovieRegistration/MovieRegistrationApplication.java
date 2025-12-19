@@ -1,4 +1,4 @@
-package com.jaswin.MovieRegistration;
+package com.jaswin.movieregistration;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,11 +9,8 @@ public class MovieRegistrationApplication {
 
 	public static void main(String[] args) {
 
-		System.out.println("new branch craeted");
 		SpringApplication.run(MovieRegistrationApplication.class, args);
-		System.out.println("hi");
-		System.out.println("added comits");
-		System.out.println("this is last test by today");
+
 	}
 
 }
