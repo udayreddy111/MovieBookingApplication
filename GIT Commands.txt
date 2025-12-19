@@ -1,0 +1,467 @@
+
+
+GIT Commnads List In Detail  :- 
+
+
+---
+
+# 🔹 1. Git Configuration Commands (First Time Setup)
+
+### Check Git version
+
+```bash
+git --version
+```
+
+### Set username
+
+```bash
+git config --global user.name "Your Name"
+```
+
+### Set email
+
+```bash
+git config --global user.email "yourmail@gmail.com"
+```
+
+### View all configurations
+
+```bash
+git config --list
+```
+
+### Edit config file
+
+```bash
+git config --global --edit
+```
+
+---
+
+# 🔹 2. Repository Initialization Commands
+
+### Initialize a new Git repository
+
+```bash
+git init
+```
+
+### Clone a repository
+
+```bash
+git clone https://github.com/user/repo.git
+```
+
+### Clone into a specific folder
+
+```bash
+git clone https://github.com/user/repo.git myFolder
+```
+
+---
+
+# 🔹 3. Working Directory & Status Commands
+
+### Check repository status
+
+```bash
+git status
+```
+
+### Short status
+
+```bash
+git status -s
+```
+
+### View tracked files
+
+```bash
+git ls-files
+```
+
+---
+
+# 🔹 4. Staging Area Commands
+
+### Add a single file
+
+```bash
+git add file.txt
+```
+
+### Add multiple files
+
+```bash
+git add file1.java file2.java
+```
+
+### Add all files
+
+```bash
+git add .
+```
+
+### Add only modified files
+
+```bash
+git add -u
+```
+
+---
+
+# 🔹 5. Commit Commands
+
+### Commit staged changes
+
+```bash
+git commit -m "Initial commit"
+```
+
+### Commit with detailed message
+
+```bash
+git commit
+```
+
+### Amend last commit
+
+```bash
+git commit --amend
+```
+
+### Commit all tracked files directly
+
+```bash
+git commit -am "Quick commit"
+```
+
+---
+
+# 🔹 6. Branch Commands
+
+### List branches
+
+```bash
+git branch
+```
+
+### Create a new branch
+
+```bash
+git branch feature-login
+```
+
+### Switch branch
+
+```bash
+git checkout feature-login
+```
+
+### Create and switch branch
+
+```bash
+git checkout -b feature-payment
+```
+
+### Rename branch
+
+```bash
+git branch -m oldName newName
+```
+
+### Delete branch
+
+```bash
+git branch -d feature-login
+```
+
+---
+
+# 🔹 7. Remote Repository Commands
+
+### View remotes
+
+```bash
+git remote -v
+```
+
+### Add remote repository
+
+```bash
+git remote add origin https://github.com/user/repo.git
+```
+
+### Remove remote
+
+```bash
+git remote remove origin
+```
+
+### Rename remote
+
+```bash
+git remote rename origin upstream
+```
+
+---
+
+# 🔹 8. Push Commands (Local → GitHub)
+
+### Push to remote branch
+
+```bash
+git push origin main
+```
+
+### Push first time (set upstream)
+
+```bash
+git push -u origin main
+```
+
+### Push all branches
+
+```bash
+git push --all
+```
+
+### Delete remote branch
+
+```bash
+git push origin --delete feature-login
+```
+
+---
+
+# 🔹 9. Pull & Fetch Commands (GitHub → Local)
+
+### Pull changes
+
+```bash
+git pull origin main
+```
+
+### Fetch changes (no merge)
+
+```bash
+git fetch
+```
+
+### Fetch specific branch
+
+```bash
+git fetch origin feature-login
+```
+
+---
+
+# 🔹 10. Merge & Rebase Commands
+
+### Merge branch
+
+```bash
+git merge feature-login
+```
+
+### Rebase branch
+
+```bash
+git rebase main
+```
+
+### Abort merge
+
+```bash
+git merge --abort
+```
+
+---
+
+# 🔹 11. Log & History Commands
+
+### View commit history
+
+```bash
+git log
+```
+
+### One-line log
+
+```bash
+git log --oneline
+```
+
+### Graph view
+
+```bash
+git log --oneline --graph --all
+```
+
+### Show changes of a commit
+
+```bash
+git show commit_id
+```
+
+---
+
+# 🔹 12. Diff Commands
+
+### Working directory vs staging
+
+```bash
+git diff
+```
+
+### Staged vs last commit
+
+```bash
+git diff --staged
+```
+
+### Between branches
+
+```bash
+git diff main feature-login
+```
+
+---
+
+# 🔹 13. Undo & Reset Commands (VERY IMPORTANT)
+
+### Unstage file
+
+```bash
+git restore --staged file.txt
+```
+
+### Discard local changes
+
+```bash
+git restore file.txt
+```
+
+### Soft reset (keep changes)
+
+```bash
+git reset --soft HEAD~1
+```
+
+### Hard reset (delete changes)
+
+```bash
+git reset --hard HEAD~1
+```
+
+---
+
+# 🔹 14. Stash Commands
+
+### Save changes temporarily
+
+```bash
+git stash
+```
+
+### List stashes
+
+```bash
+git stash list
+```
+
+### Apply stash
+
+```bash
+git stash apply
+```
+
+### Pop stash
+
+```bash
+git stash pop
+```
+
+---
+
+# 🔹 15. Tag Commands
+
+### Create tag
+
+```bash
+git tag v1.0
+```
+
+### Push tag
+
+```bash
+git push origin v1.0
+```
+
+### List tags
+
+```bash
+git tag
+```
+
+---
+
+# 🔹 16. Clean & Maintenance Commands
+
+### Remove untracked files
+
+```bash
+git clean -f
+```
+
+### Remove untracked folders
+
+```bash
+git clean -fd
+```
+
+### Garbage collection
+
+```bash
+git gc
+```
+
+---
+
+# 🔹 17. Useful Daily Commands (MOST USED)
+
+```bash
+git status
+git add .
+git commit -m "message"
+git pull
+git push
+git log --oneline
+```
+
+---
+
+# 🔹 18. Interview Important Git Commands
+
+| Purpose        | Command           |
+| -------------- | ----------------- |
+| Check changes  | `git status`      |
+| Stage files    | `git add`         |
+| Commit         | `git commit`      |
+| Push           | `git push`        |
+| Pull           | `git pull`        |
+| Create branch  | `git checkout -b` |
+| Merge          | `git merge`       |
+| Undo commit    | `git reset`       |
+| Temporary save | `git stash`       |
+
+---
+
+If you want, next I can provide:
+✅ **Git workflow diagram**
+✅ **Exact step-by-step PUSH & PULL flow**
+✅ **Git interview questions & answers**
+✅ **GitHub vs Git differences**
+
+Just tell me 👍
