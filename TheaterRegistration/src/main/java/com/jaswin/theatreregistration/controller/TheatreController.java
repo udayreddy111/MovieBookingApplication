@@ -27,6 +27,12 @@ public class TheatreController {
     public List<TheatreResponse> getByLocation(@PathVariable String location) {
         return theatreService.getByLocation(location);
     }
+    
+    // GET - Find by ID
+    @GetMapping("/{id}")
+    public TheatreResponse getById(@PathVariable Long id) {
+        return theatreService.getById(id);
+    }
 
     // DELETE - Delete by Theatre Name
     @DeleteMapping("/{theatreName}")

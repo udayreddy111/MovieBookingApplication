@@ -5,10 +5,14 @@ import org.springframework.stereotype.Repository;
 
 import com.jaswin.movieregistration.entity.MovieBooking;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
 public interface MovieRepository extends JpaRepository<MovieBooking, Long> {
 
     List<MovieBooking> findByTheaterid(Long theaterId);
+    
+    List<MovieBooking> findByTheateridAndMoviedate(Long theaterid, LocalDate moviedate);
+
 }

@@ -52,6 +52,14 @@ public class TheatreService {
         Theatre saved = theatreRepository.save(theatre);
         return convertToEntityToResponseType(saved);
     }
+    
+    // READ by ID
+    public TheatreResponse getById(Long id) {
+        Theatre theatre = theatreRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Theatre not found"));
+
+        return convertToEntityToResponseType(theatre);
+    }
 
     // READ by location  (Option 1 — Classic loop conversion)
     public List<TheatreResponse> getByLocation(String location) {

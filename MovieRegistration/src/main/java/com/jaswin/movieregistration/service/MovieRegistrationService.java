@@ -1,5 +1,6 @@
 package com.jaswin.movieregistration.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,6 +59,22 @@ public class MovieRegistrationService {
 
         return dtoList;
     }
+    
+    // ----------- READ BY TheatreID & DATE ------------
+    public List<MovieBookingDTO> getMoviesByTheatreAndDate(Long theatreId, LocalDate date) {
+
+        List<MovieBooking> movies =
+                movieRepository.findByTheateridAndMoviedate(theatreId, date);
+
+        List<MovieBookingDTO> dtoList = new ArrayList<>();
+
+        for (MovieBooking movie : movies) {
+            dtoList.add(convertToDTO(movie));
+        }
+
+        return dtoList;
+    }
+
 
     // ---------- READ ALL (Classic Loop Option-1) ----------
     public List<MovieBookingDTO> getAllMovies() {
