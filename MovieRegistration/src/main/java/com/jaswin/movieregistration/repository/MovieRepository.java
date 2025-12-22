@@ -5,7 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import com.jaswin.movieregistration.entity.MovieBooking;
 
+import java.util.List;
+
 @Repository
 public interface MovieRepository extends JpaRepository<MovieBooking, Long> {
 
+    List<MovieBooking> findByTheaterid(Long theaterId);
 }

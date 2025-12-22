@@ -37,6 +37,7 @@ public class MovieRegistrationService {
         dto.setLanguage(entity.getLanguage());
         dto.setMoviestarttime(entity.getMoviestarttime());
         dto.setPrice(entity.getPrice());
+        dto.setMovieId(entity.getMovieId());
         return dto;
     }
 
@@ -47,10 +48,15 @@ public class MovieRegistrationService {
     }
 
     // ---------- READ BY ID ----------
-    public MovieBookingDTO getMovieById(Long theaterId) {
-        MovieBooking movie = movieRepository.findById(theaterId)
-                .orElseThrow(() -> new RuntimeException("Movie not found with Id: " + theaterId));
-        return convertToDTO(movie);
+    public List<MovieBookingDTO> getMovieById(Long theaterId) {
+        List<MovieBooking> movie = movieRepository.findByTheaterid(theaterId);
+
+        List<MovieBookingDTO> dtoList = new ArrayList<>();
+        for (MovieBooking booking: movie) {
+            dtoList.add(convertToDTO(booking));
+        }
+
+        return dtoList;
     }
 
     // ---------- READ ALL (Classic Loop Option-1) ----------

@@ -10,6 +10,7 @@ import jakarta.validation.constraints.NotNull;
 
 public class MovieBookingDTO {
 
+	private Long movieId;
     private Long theaterid;
 
     @NotBlank(message = "movie name must not be empty")
@@ -20,9 +21,17 @@ public class MovieBookingDTO {
     private String language;
 
     @NotNull(message = "moviestarttime must not be null")
-    private LocalTime moviestarttime;
+    private String moviestarttime;
 
     private int price;
+
+	public Long getMovieId() {
+		return movieId;
+	}
+
+	public void setMovieId(Long movieId) {
+		this.movieId = movieId;
+	}
 
 	public Long getTheaterid() {
 		return theaterid;
@@ -56,11 +65,11 @@ public class MovieBookingDTO {
 		this.language = language;
 	}
 
-	public LocalTime getMoviestarttime() {
+	public @NotNull(message = "moviestarttime must not be null") String getMoviestarttime() {
 		return moviestarttime;
 	}
 
-	public void setMoviestarttime(LocalTime moviestarttime) {
+	public void setMoviestarttime(@NotNull(message = "moviestarttime must not be null") String moviestarttime) {
 		this.moviestarttime = moviestarttime;
 	}
 

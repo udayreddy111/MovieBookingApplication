@@ -14,6 +14,7 @@ public class MovieBooking {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long movieId;
 	private Long theaterid;
 	@NotBlank(message = "movie name must not be empty")
 	
@@ -23,7 +24,7 @@ public class MovieBooking {
 	
 	private String language;
 	@NotNull(message ="moviestarttime must not be null")
-	private LocalTime moviestarttime;
+	private String moviestarttime;
 	
 	private int price;
 	
@@ -31,9 +32,17 @@ public class MovieBooking {
 		
 	}
 
+	public Long getMovieId() {
+		return movieId;
+	}
+
+	public void setMovieId(Long movieId) {
+		this.movieId = movieId;
+	}
+
 	public MovieBooking(Long theaterid, @NotBlank(message = "movie name must not be empty") String movienames,
-			LocalDate moviedate, String language,
-			@NotNull(message = "moviestarttime must not be null") LocalTime moviestarttime, int price) {
+						LocalDate moviedate, String language,
+						@NotNull(message = "moviestarttime must not be null") String moviestarttime, int price) {
 		super();
 		this.theaterid = theaterid;
 		this.movienames = movienames;
@@ -75,11 +84,11 @@ public class MovieBooking {
 		this.language = language;
 	}
 
-	public LocalTime getMoviestarttime() {
+	public @NotNull(message = "moviestarttime must not be null") String getMoviestarttime() {
 		return moviestarttime;
 	}
 
-	public void setMoviestarttime(LocalTime moviestarttime) {
+	public void setMoviestarttime(@NotNull(message = "moviestarttime must not be null") String moviestarttime) {
 		this.moviestarttime = moviestarttime;
 	}
 

@@ -1,19 +1,12 @@
 package com.jaswin.theatreregistration.model;
 
-public class TheatreDTO {
+public class TheatreRequest {
 
-	    private Long id;
+
 	    private String theatreName;
 	    private String location;
 	    private Integer seats;
-	    
-	    
-		public Long getId() {
-			return id;
-		}
-		public void setId(Long id) {
-			this.id = id;
-		}
+
 		public String getTheatreName() {
 			return theatreName;
 		}

@@ -23,7 +23,7 @@ public class MovieRegistrationController {
 
     // READ BY ID
     @GetMapping("/{id}")
-    public MovieBookingDTO getById(@PathVariable("id") Long theaterId) {
+    public List<MovieBookingDTO> getById(@PathVariable("id") Long theaterId) {
         return movieService.getMovieById(theaterId);
     }
 
