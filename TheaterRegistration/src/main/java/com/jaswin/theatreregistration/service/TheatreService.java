@@ -18,16 +18,6 @@ public class TheatreService {
     @Autowired
     private TheatreRepository theatreRepository;
 
-//    // Convert Entity → DTO
-//    private TheatreRequest convertToDTO(Theatre theatre) {
-//        TheatreRequest dto = new TheatreRequest();
-//        dto.setId(theatre.getId());
-//        dto.setTheatreName(theatre.getTheatreName());
-//        dto.setLocation(theatre.getLocation());
-//        dto.setSeats(theatre.getSeats());
-//        return dto;
-//    }
-
     // Convert DTO → Entity
     private Theatre convertToEntity(TheatreRequest dto) {
         Theatre theatre = new Theatre();

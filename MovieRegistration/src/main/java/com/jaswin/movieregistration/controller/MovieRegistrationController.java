@@ -1,5 +1,6 @@
 package com.jaswin.movieregistration.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,15 @@ public class MovieRegistrationController {
     @GetMapping
     public List<MovieBookingDTO> getAll() {
         return movieService.getAllMovies();
+    }
+    
+    // READ BY DATE
+    @GetMapping("/by-theatres-date")
+    public List<MovieBookingDTO> getMoviesByTheatresAndDate(
+            @RequestParam List<Long> theatreIds,
+            @RequestParam LocalDate date) {
+
+        return movieService.getMoviesByTheatresAndDate(theatreIds, date);
     }
 
     // UPDATE

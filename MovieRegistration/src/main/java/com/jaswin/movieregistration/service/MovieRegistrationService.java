@@ -60,6 +60,23 @@ public class MovieRegistrationService {
         return dtoList;
     }
     
+    // ----------- READ BY TheatreIDs & DATE ------------
+    public List<MovieBookingDTO> getMoviesByTheatresAndDate(
+            List<Long> theatreIds, LocalDate date) {
+
+        List<MovieBooking> movies =
+                movieRepository.findByTheateridInAndMoviedate(theatreIds, date);
+
+        List<MovieBookingDTO> dtoList = new ArrayList<>();
+
+        for (MovieBooking movie : movies) {
+            MovieBookingDTO dto = convertToDTO(movie);
+            dtoList.add(dto);
+        }
+
+        return dtoList;
+    }
+    
     // ----------- READ BY TheatreID & DATE ------------
     public List<MovieBookingDTO> getMoviesByTheatreAndDate(Long theatreId, LocalDate date) {
 
