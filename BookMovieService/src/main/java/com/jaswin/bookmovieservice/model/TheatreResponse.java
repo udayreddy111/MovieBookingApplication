@@ -1,7 +1,6 @@
-package com.jaswin.movieregistration.model;
+package com.jaswin.bookmovieservice.model;
 
 public class TheatreResponse {
-
     private Long id;
     private String theatreName;
     private String location;
@@ -30,6 +29,8 @@ public class TheatreResponse {
 	public void setSeats(Integer seats) {
 		this.seats = seats;
 	}
-
+   
     
+   
 }
+

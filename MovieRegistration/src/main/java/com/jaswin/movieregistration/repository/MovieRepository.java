@@ -14,5 +14,11 @@ public interface MovieRepository extends JpaRepository<MovieBooking, Long> {
     List<MovieBooking> findByTheaterid(Long theaterId);
     
     List<MovieBooking> findByTheateridAndMoviedate(Long theaterid, LocalDate moviedate);
+    
+    List<MovieBooking> findByTheateridInAndMoviedate(
+            List<Long> theaterid,
+            LocalDate moviedate
+    );
+
 
 }
