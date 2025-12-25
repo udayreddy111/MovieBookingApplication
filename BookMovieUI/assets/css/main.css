@@ -1,0 +1,21 @@
+
+/* Soft dark gradient background */
+body {
+  background: radial-gradient(900px 400px at 10% 0%, #111827 0%, transparent 50%),
+              radial-gradient(700px 400px at 90% 30%, #0f172a 0%, transparent 60%),
+              #0b1221;
+  color: #eaf0ff;
+  min-height: 100vh;
+}
+
+.card {
+  border-radius: 1rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+}
+
+.form-label { color: #a7b1c7; }
+.navbar { border-bottom: 1px solid rgba(255,255,255,0.12); }
+
+.d-none { display: none !important; }

@@ -1,0 +1,75 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Add Theatre • Movie Book</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../assets/css/main.css" rel="stylesheet" />
+</head>
+<body class="bg-dark text-light">
+<nav class="navbar navbar-dark bg-dark border-bottom border-secondary">
+    <div class="container">
+        <a href="../index.html" class="navbar-brand text-decoration-none">🎬 Movie Book</a>
+        <span class="text-secondary">Add Theatre</span>
+    </div>
+</nav>
+
+<main class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h4 class="card-title mb-2">Add Theatre</h4>
+                    <p class="text-secondary mb-4">Enter theatre details and submit to save.</p>
+
+                    <!-- Toast area -->
+                    <div id="theatreToast" class="mb-3 d-none"></div>
+
+                    <!-- Form -->
+                    <form id="theatreForm" class="row g-3">
+                        <div class="col-12">
+                            <label class="form-label">Theatre Name</label>
+                            <input name="theatreName" class="form-control" placeholder="e.g., MSR" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Location</label>
+                            <input name="location" class="form-control" placeholder="e.g., MUMBAI" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Seats</label>
+                            <input name="seats" type="number" min="1" class="form-control" placeholder="e.g., 100" required />
+                        </div>
+                        <div class="col-12 d-grid">
+                            <button class="btn btn-success" type="submit">Add Theatre</button>
+                        </div>
+                    </form>
+
+                    <hr class="my-4">
+                    <div class="small text-secondary">
+                        <strong>POST</strong> <code>http://localhost:8081/api/theatres/addTheater</code><br />
+                        Sample JSON:
+                        <pre class="mt-2 mb-0"><code>{
+  "theatreName": "MSR",
+  "location": "MUMBAI",
+  "seats": 100
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Page JS (order matters: api deps first, then page) -->
+<script src="../../assets/js/ui/toast.js"></script>
+<script src="../../assets/js/api/http.js"></script>
+<script src="../../assets/js/api/theatres.js"></script>
+<script src="../../assets/js/pages/addTheatre.js"></script>
+</body>
+</html>
