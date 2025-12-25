@@ -1,10 +1,85 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Browse Theatres • Movie Book</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Shared CSS -->
+    <link href="../../assets/css/main.css" rel="stylesheet" />
 </head>
-<body>
+<body class="bg-dark text-light">
+<nav class="navbar navbar-dark bg-dark border-bottom border-secondary">
+    <div class="container">
+        <a href="../index.html" class="navbar-brand">🎬 Movie Book</a>
+        <span class="text-secondary">Browse Theatres</span>
+    </div>
+</nav>
 
+<main class="container py-4">
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <h4 class="card-title mb-2">Find Theatres by Location</h4>
+            <p class="text-secondary mb-3">Enter a city/location and click Search.</p>
+
+            <!-- Toast area -->
+            <div id="browseToast" class="mb-3 d-none"></div>
+
+            <!-- Search controls -->
+            <div class="row g-3 align-items-end">
+                <div class="col-md-6">
+                    <label class="form-label">Location</label>
+                    <input id="searchLocation" class="form-control" placeholder="e.g., MUMBAI" value="MUMBAI" />
+                </div>
+                <div class="col-md-3 d-grid">
+                    <button id="btnSearch" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <!-- Results -->
+            <div id="theatreGrid" class="row g-3">
+                <!-- Cards will be rendered here -->
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Movies Modal -->
+<div class="modal fade" id="moviesModal" tabindex="-1" aria-labelledby="moviesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content bg-dark text-light border-secondary">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title" id="moviesModalLabel">Movies</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="moviesToast" class="mb-3 d-none"></div>
+                <div id="moviesList">
+                    <!-- Movie items will render here -->
+                </div>
+            </div>
+            <div class="modal-footer border-secondary">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-primary" disabled>Book (coming)</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Shared UI helpers and API -->
+<script src="../../assets/js/ui/toast.js"></script>
+<script src="../../assets/js/api/http.js"></script>
+<script src="../../assets/js/api/theatres.js"></script>
+<!-- Movies module -->
+<script src="../../assets/js/api/movies.js"></script>
+<script src="../../assets/js/pages/viewMovies.js"></script>
+<!-- Page script -->
+<script src="../../assets/js/pages/browseTheatres.js"></script>
 </body>
 </html>
