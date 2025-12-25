@@ -28,11 +28,11 @@ public class BookMovieController {
      */
     @GetMapping
     public List<TheatreMovieResponse> getBookings(
-            @RequestParam String location,
-            @RequestParam
+            @RequestParam("location") String location,
+            @RequestParam("date")
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
             LocalDate date) {
-
+        System.out.println("eneytered");
         return bookMovieService.getBookings(location, date);
     }
 }

@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.jaswin.bookmovieservice.remote.MovieRegistrationRemote;
+import com.jaswin.bookmovieservice.remote.TheaterRemote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,17 +19,17 @@ import com.jaswin.bookmovieservice.model.TheatreResponse;
 public class BookMovieService {
 
     @Autowired
-    private TheatreClient theatreClient;
+    private TheaterRemote theatreClient;
 
     @Autowired
-    private MovieClient movieClient;
+    private MovieRegistrationRemote movieClient;
 
     public List<TheatreMovieResponse> getBookings(
             String location, LocalDate date) {
 
         // 1️⃣ Get theatres by location
         List<TheatreResponse> theatres =
-                theatreClient.getTheatresByLocation(location);
+                theatreClient.getTheatersList(location);
 
         // 2️⃣ Extract theatreIds using for-loop
         List<Long> theatreIds = new ArrayList<>();

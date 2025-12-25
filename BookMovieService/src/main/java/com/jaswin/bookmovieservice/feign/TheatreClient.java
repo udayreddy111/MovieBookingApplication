@@ -13,5 +13,5 @@ public interface TheatreClient {
 
     @GetMapping("/api/theatres/location/{location}")
     List<TheatreResponse> getTheatresByLocation(
-            @PathVariable String location);
+            @PathVariable("location") String location);
 }
